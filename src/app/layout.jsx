@@ -10,7 +10,7 @@ export const metadata = {
   description:
     'Gymify is your ultimate fitness destination. Explore workouts, training programs, and expert tips to build strength, stay fit, and achieve your goals.',
   icons: {
-    icon: '/logo.png ',
+    icon: '/logo.png',
   },
 };
 
