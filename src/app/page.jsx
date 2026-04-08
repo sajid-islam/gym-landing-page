@@ -1,11 +1,13 @@
+import BannerBg from '@/components/banner-bg/BannerBg';
+import Banner from '@/components/banner/Banner';
+import Navbar from '@/components/navbar/Navbar';
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-1 flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex w-full flex-1 flex-col items-center justify-center text-center">
-        <h1 className="text-3xl leading-10 font-semibold tracking-tight text-black dark:text-zinc-50">
-          Root Page
-        </h1>
-      </main>
+    <div className="relative mx-auto mt-5 min-h-screen w-full max-w-7xl overflow-hidden px-5">
+      <BannerBg />
+      <Navbar />
+      <Banner />
     </div>
   );
 }
