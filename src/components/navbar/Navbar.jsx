@@ -30,10 +30,7 @@ const Navbar = () => {
       </section>
       <div>
         <Link href={'/register'}>
-          <Button
-            asChild
-            className="font-tilt-warp rounded-full px-17 py-9 text-3xl uppercase transition-colors duration-300 hover:cursor-pointer hover:bg-black"
-          >
+          <Button className="font-tilt-warp rounded-full px-17 py-9 text-3xl uppercase transition-colors duration-300 hover:cursor-pointer hover:bg-black">
             Register
           </Button>
         </Link>

@@ -132,3 +132,8 @@
     @apply font-sans;
   }
 }
+
+.stroke-text {
+  -webkit-text-stroke: 1px white; /* border */
+  color: transparent; /* makes text transparent */
+}
