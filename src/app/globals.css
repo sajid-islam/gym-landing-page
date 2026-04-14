@@ -137,3 +137,13 @@
   -webkit-text-stroke: 1px white; /* border */
   color: transparent; /* makes text transparent */
 }
+
+.specialty-box {
+  width: clamp(10px, 18vw, 250px);
+  height: clamp(10px, 7vw, 95px);
+  padding: 12px 20px 12px 20px;
+}
+
+.specialty-box:last-child {
+  height: clamp(10px, 9vw, 120px);
+}

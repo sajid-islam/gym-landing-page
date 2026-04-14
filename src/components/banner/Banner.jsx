@@ -5,7 +5,6 @@ import InLogo from '@/images/social-media-logos/linkedin-logo.png';
 import XLogo from '@/images/social-media-logos/twitter-logo.png';
 import Image from 'next/image';
 import OurSpecialty from './OurSpecialty';
-import ShowcaseHero from './ShowcaseHero';
 const Banner = () => {
   return (
     <div className="font-tilt-warp relative">
@@ -27,7 +26,7 @@ const Banner = () => {
       {/* Our Specialty */}
       <OurSpecialty />
       {/* Showcase */}
-      <ShowcaseHero />
+      {/* <ShowcaseHero /> */}
     </div>
   );
 };
