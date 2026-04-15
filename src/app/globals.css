@@ -158,3 +158,9 @@
 .menu-icon-padding {
   padding: clamp(6px, 1.5vw, 20px);
 }
+
+@media (max-width: 1024px) {
+  .hero-text {
+    font-size: clamp(48px, 11vw, 132px);
+  }
+}

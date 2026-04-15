@@ -9,10 +9,10 @@ const Navbar = () => {
     <nav className="relative flex justify-between">
       <div>
         <button className="bg-primary menu-icon-padding rounded-full">
-          <Image src={menuIcon} alt="menu-icon" className="size-5 md:size-12" />
+          <Image src={menuIcon} alt="menu-icon" className="size-5 md:size-8 lg:size-12" />
         </button>
       </div>
-      <section className="absolute top-5 left-32 flex items-center gap-8 rounded-full border-2 border-white px-10 py-4">
+      <section className="absolute top-5 left-32 hidden items-center gap-8 rounded-full border-2 border-white px-10 py-4 lg:flex">
         {/* Navigation Links */}
         <ul className="flex items-center gap-10 font-medium text-white">
           <li className="cursor-pointer transition-colors hover:text-gray-300">Home</li>
@@ -30,7 +30,7 @@ const Navbar = () => {
       </section>
       <div>
         <Link href={'/register'}>
-          <Button className="font-tilt-warp register-btn-padding rounded-full text-3xl uppercase transition-colors duration-300 hover:cursor-pointer hover:bg-black">
+          <Button className="font-tilt-warp register-btn-padding rounded-full text-xl uppercase transition-colors duration-300 hover:cursor-pointer hover:bg-black lg:text-3xl">
             Register
           </Button>
         </Link>
