@@ -139,11 +139,22 @@
 }
 
 .specialty-box {
-  width: clamp(10px, 18vw, 250px);
+  width: clamp(10px, 18vw, 235px);
   height: clamp(10px, 7vw, 95px);
   padding: 12px 20px 12px 20px;
 }
 
 .specialty-box:last-child {
   height: clamp(10px, 9vw, 120px);
+}
+
+.register-btn-padding {
+  padding-left: clamp(10px, 4.5vw, 68px);
+  padding-right: clamp(10px, 4.5vw, 68px);
+  padding-top: clamp(10px, 3vw, 36px);
+  padding-bottom: clamp(10px, 3vw, 36px);
+}
+
+.menu-icon-padding {
+  padding: clamp(6px, 1.5vw, 20px);
 }

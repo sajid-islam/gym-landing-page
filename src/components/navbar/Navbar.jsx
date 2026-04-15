@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className="relative flex justify-between">
       <div>
-        <button className="bg-primary rounded-full p-2 md:p-5">
+        <button className="bg-primary menu-icon-padding rounded-full">
           <Image src={menuIcon} alt="menu-icon" className="size-5 md:size-12" />
         </button>
       </div>
@@ -30,7 +30,7 @@ const Navbar = () => {
       </section>
       <div>
         <Link href={'/register'}>
-          <Button className="font-tilt-warp rounded-full px-17 py-9 text-3xl uppercase transition-colors duration-300 hover:cursor-pointer hover:bg-black">
+          <Button className="font-tilt-warp register-btn-padding rounded-full text-3xl uppercase transition-colors duration-300 hover:cursor-pointer hover:bg-black">
             Register
           </Button>
         </Link>
