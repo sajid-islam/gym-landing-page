@@ -24,10 +24,10 @@ const Banner = () => {
           <BannerLeftPattern className={'absolute mt-14 ml-10'} />
         </div>
       </section>
-      {/* Our Specialty */}
-      <OurSpecialty />
       {/* Showcase */}
       <ShowcaseHero />
+      {/* Our Specialty */}
+      <OurSpecialty />
     </div>
   );
 };

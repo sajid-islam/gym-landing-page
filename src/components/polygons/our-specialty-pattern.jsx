@@ -4,7 +4,7 @@ const OurSpecialtyPattern = () => {
       viewBox="0 0 287 118"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="h-[90px] w-[118px] xl:w-[150px] xl:w-[190px]"
+      className="hidden h-[90px] w-[118px] lg:block xl:w-[150px] xl:w-[190px]"
     >
       <path
         d="M31.4833 38.5604C24.7047 46.6215 12.2953 46.6215 5.51665 38.5603C3.33329 35.9639 5.17913 32 8.57156 32L28.4284 32C31.8209 32 33.6667 35.9639 31.4833 38.5604Z"
