@@ -1,12 +1,12 @@
 const CommonPattern = ({ className }) => {
   return (
     <svg
-      width="112"
-      height="148"
+      width="96"
+      height="112"
       viewBox="0 0 112 148"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      className={`relative ${className}`}
     >
       <path
         d="M105.44 105.483C97.3785 98.7047 97.3785 86.2953 105.44 79.5167C108.036 77.3333 112 79.1791 112 82.5716L112 102.428C112 105.821 108.036 107.667 105.44 105.483Z"
