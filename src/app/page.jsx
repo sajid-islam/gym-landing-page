@@ -1,6 +1,7 @@
 import BannerBg from '@/components/banner-bg/BannerBg';
 import Banner from '@/components/banner/Banner';
 import Navbar from '@/components/navbar/Navbar';
+import Newsletter from '@/components/newsletter/Newsletter';
 import OurProducts from '@/components/our-products/OurProducts';
 import Reviews from '@/components/reviews/Reviews';
 import WhyUs from '@/components/why-us/WhyUs';
@@ -16,6 +17,7 @@ export default function Home() {
       <OurProducts />
       <WhyUs />
       <Reviews />
+      <Newsletter />
     </div>
   );
 }
