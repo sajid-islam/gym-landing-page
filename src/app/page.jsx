@@ -2,6 +2,7 @@ import BannerBg from '@/components/banner-bg/BannerBg';
 import Banner from '@/components/banner/Banner';
 import Navbar from '@/components/navbar/Navbar';
 import OurProducts from '@/components/our-products/OurProducts';
+import WhyUs from '@/components/why-us/WhyUs';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <Banner />
       </div>
       <OurProducts />
+      <WhyUs />
     </div>
   );
 }
