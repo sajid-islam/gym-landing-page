@@ -35,7 +35,7 @@ const ProductCard = ({ product }) => {
 
           {/* Add Button */}
           <Button className={'p-4'}>
-            <Plus size={32++} strokeWidth={3} />
+            <Plus size={32} strokeWidth={3} />
           </Button>
         </div>
       </div>
