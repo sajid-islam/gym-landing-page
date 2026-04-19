@@ -2,7 +2,8 @@
 
 Gymify is a state-of-the-art landing page for an elite fitness community. Built with modern web technologies, it features a sleek dark-themed design, smooth animations, and a complete authentication flow.
 
-[**Live Demo »**](https://gymify1.vercel.app)
+[**Live Demo »**](https://gymify1.vercel.app)  
+[**Figma Design »**](https://www.figma.com/design/0NUsWbfIIr9wGQG1fUb09W/Gym-Landing-Page?m=auto&t=4mN6SfIF4H7a7X8O-1)
 
 ## Features
 
