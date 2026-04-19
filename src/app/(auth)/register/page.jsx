@@ -18,16 +18,16 @@ export default function RegisterPage() {
     setLoading(true);
     setError('');
     const formData = new FormData(e.target);
-    const name = formData.get('name');
-    const [firstName, lastName] = name.split(' ');
+    const firstName = formData.get('firstName');
+    const lastName = formData.get('lastName');
     const email = formData.get('email');
     const password = formData.get('password');
     const confirmPassword = formData.get('confirmPassword');
     const terms = formData.get('terms') === 'on';
 
     const result = await register(
-      firstName || name,
-      lastName || '',
+      firstName,
+      lastName,
       email,
       password,
       confirmPassword,
@@ -52,11 +52,21 @@ export default function RegisterPage() {
       <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 md:grid-cols-2">
         {error && <p className="text-sm text-red-500 md:col-span-2">{error}</p>}
         <div className="flex flex-col gap-2">
-          <label className="text-sm font-medium text-gray-300">Full Name</label>
+          <label className="text-sm font-medium text-gray-300">First Name</label>
           <input
-            name="name"
+            name="firstName"
             type="text"
-            placeholder="John Doe"
+            placeholder="John"
+            className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 font-sans text-white transition-all placeholder:text-gray-600 focus:border-white/30 focus:ring-1 focus:ring-white/30 focus:outline-none"
+            required
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <label className="text-sm font-medium text-gray-300">Last Name</label>
+          <input
+            name="lastName"
+            type="text"
+            placeholder="Doe"
             className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 font-sans text-white transition-all placeholder:text-gray-600 focus:border-white/30 focus:ring-1 focus:ring-white/30 focus:outline-none"
             required
           />
