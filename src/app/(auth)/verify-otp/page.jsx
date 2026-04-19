@@ -35,7 +35,7 @@ function VerifyOTPPageContent() {
     setError('');
     const result = await verifyOtp(email, otp);
     if (result.success) {
-      router.push('/');
+      router.push('/login');
     } else {
       setError(result.error);
     }

@@ -117,15 +117,7 @@ export function AuthProvider({ children }) {
     });
 
     if (response.ok) {
-      const data = await response.json();
-      const authToken = data.token;
-
-      if (authToken) {
-        setToken(authToken);
-        localStorage.setItem('token', authToken);
-        await fetchUserDetails(authToken);
-      }
-      return { success: true, token: authToken };
+      return { success: true };
     }
     return { success: false, error: 'OTP verification failed' };
   };
