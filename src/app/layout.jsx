@@ -1,6 +1,8 @@
 import { Tilt_Warp } from 'next/font/google';
 import { satoshi } from './fonts';
 
+import { AuthProvider } from '@/context/AuthContext';
+import { Toaster } from 'sonner';
 import './globals.css';
 
 const tiltWarp = Tilt_Warp({ weight: ['400'], subsets: ['latin'], variable: '--font-tilt-warp' });
@@ -17,7 +19,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${satoshi.className} ${tiltWarp.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <AuthProvider>{children}</AuthProvider>
+        <Toaster position="top-right" richColors />
+      </body>
     </html>
   );
 }

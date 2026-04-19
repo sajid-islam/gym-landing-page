@@ -2,15 +2,45 @@
 
 import AuthWrapper from '@/components/auth/AuthWrapper';
 import { Button } from '@/components/ui/button';
+import { useAuth } from '@/context/AuthContext';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 export default function RegisterPage() {
-  const handleSubmit = (e) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const { register } = useAuth();
+  const router = useRouter();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError('');
     const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
-    console.log('Registration attempt:', data);
-    alert('Registration attempted! Check console for data.');
+    const name = formData.get('name');
+    const [firstName, lastName] = name.split(' ');
+    const email = formData.get('email');
+    const password = formData.get('password');
+    const confirmPassword = formData.get('confirmPassword');
+    const terms = formData.get('terms') === 'on';
+
+    const result = await register(
+      firstName || name,
+      lastName || '',
+      email,
+      password,
+      confirmPassword,
+      terms
+    );
+    if (result.success) {
+      // Redirect to verify OTP, passing email and otp (for testing)
+      const otpQuery = result.otp ? `&otp=${result.otp}` : '';
+      router.push(`/verify-otp?email=${encodeURIComponent(email)}${otpQuery}`);
+    } else {
+      setError(result.error);
+    }
+    setLoading(false);
   };
 
   return (
@@ -20,6 +50,7 @@ export default function RegisterPage() {
       maxWidth="max-w-2xl"
     >
       <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        {error && <p className="text-sm text-red-500 md:col-span-2">{error}</p>}
         <div className="flex flex-col gap-2">
           <label className="text-sm font-medium text-gray-300">Full Name</label>
           <input
@@ -60,12 +91,32 @@ export default function RegisterPage() {
             required
           />
         </div>
+        <div className="flex items-center gap-2 md:col-span-2">
+          <input
+            name="terms"
+            type="checkbox"
+            id="terms"
+            className="size-4 rounded border-white/10 bg-white/5 accent-white"
+            required
+          />
+          <label htmlFor="terms" className="cursor-pointer text-sm text-gray-400">
+            I agree to the{' '}
+            <Link href="#" className="text-white hover:underline">
+              Terms of Service
+            </Link>{' '}
+            and{' '}
+            <Link href="#" className="text-white hover:underline">
+              Privacy Policy
+            </Link>
+          </label>
+        </div>
 
         <Button
           type="submit"
-          className="mt-4 h-auto rounded-xl bg-white py-4 font-bold tracking-wider text-black uppercase transition-colors hover:bg-gray-200 md:col-span-2"
+          disabled={loading}
+          className="mt-4 h-auto rounded-xl bg-white py-4 font-bold tracking-wider text-black uppercase transition-colors hover:bg-gray-200 disabled:opacity-50 md:col-span-2"
         >
-          Join Now
+          {loading ? 'Joining...' : 'Join Now'}
         </Button>
 
         <p className="mt-4 text-center text-sm text-gray-400 md:col-span-2">
